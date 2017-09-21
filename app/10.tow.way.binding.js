@@ -9,19 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var tutorials_component_1 = require('./tutorials.component');
-var AppComponent = (function () {
-    function AppComponent() {
+var _11_TowWayBinding = (function () {
+    function _11_TowWayBinding() {
+        this.title = "Tutorials: Event binding and references";
     }
-    AppComponent = __decorate([
+    _11_TowWayBinding = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "<h1>Hello World from Leonhard</h2>\n            <my-tutorials></my-tutorials>",
-            directives: [tutorials_component_1.TutorialsComponent]
+            selector: 'tut-10',
+            template: "<h2>{{ title }}</h2>\n                <input type=\"text\" [(ngModel)]=\"fname\">\n                <input type=\"text\" [(ngModel)]=\"lname\">\n                Fullname: {{fname}} {{lname}}\n                \n    "
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], _11_TowWayBinding);
+    return _11_TowWayBinding;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports._11_TowWayBinding = _11_TowWayBinding;
+//# sourceMappingURL=10.tow.way.binding.js.map
