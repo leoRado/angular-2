@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+<<<<<<< HEAD
 var TutorialsComponent = (function () {
     function TutorialsComponent() {
         this.title = "Tutorials";
@@ -21,6 +22,22 @@ var TutorialsComponent = (function () {
             selector: 'my-tutorials',
             template: "<h2>Awesome tutorial</h2>\n                <h3>{{ title }}</h3>\n                <img [src]=imgLink>\n                <br><br>\n                <input type=\"text\" value=\"Angular\">\n                <h4>Header 4 tutorial component</h4>\n                <div [class.myClass]=\"applyclass\"></div>\n                <div [style.color]=\"applyblue?'blue':'red'\"></div>",
             styles: ["\n        .myClass {\n            color: blue;\n        }\n        h4:{\n            color: red;\n        }\n    "]
+=======
+var TutorialComponent = (function () {
+    function TutorialComponent() {
+        this.h3Title = "H3 title";
+        this.applyclass = true;
+        this.applyblue = true;
+    }
+    TutorialComponent.prototype.onClick = function () {
+        console.log("Button clicked");
+    };
+    TutorialComponent = __decorate([
+        core_1.Component({
+            selector: 'my-tutorials',
+            template: "<h2>Awesome tutorial</h2>\n                <h3>{{h3Title}}</h3>\n                <div [class.myClass]=\"applyclass\"></div>\n                <div [style.color]=\"applyblue?blue:orange\"></div>\n                <button (click)=\"onClick()\"></button>\n                <input #inputField type=\"text\">\n    ",
+            styles: [".myClass {\n        color: red;\n    }"]
+>>>>>>> 7f174216066704ab9eadbba31b6a27e24a9c8e54
         }), 
         __metadata('design:paramtypes', [])
     ], TutorialsComponent);

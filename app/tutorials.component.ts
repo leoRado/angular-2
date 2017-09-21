@@ -9,7 +9,7 @@ import { Component } from '@angular/core'
                 <input type="text" value="Angular">
                 <h4>Header 4 tutorial component</h4>
                 <div [class.myClass]="applyclass"></div>
-                <div [style.color]="applyblue?'blue':'red'"></div>`,
+                <div [style.color]="applyblue?'blue':'orange'"></div>`,
     styles: [`
         .myClass {
             color: blue;
