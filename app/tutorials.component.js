@@ -9,19 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var core_2 = require('@angular/core');
 var TutorialsComponent = (function () {
     function TutorialsComponent() {
         this.title = "Tutorials";
-        this.imgLink = "http://lorempixel.com/400/200";
-        this.applyclass = true;
-        this.applyblue = true;
+        this.childEvent = new core_2.EventEmitter();
     }
+    TutorialsComponent.prototype.onChange = function (value) {
+        this.childEvent.emit(value);
+    };
     TutorialsComponent = __decorate([
         core_1.Component({
             selector: 'my-tutorials',
-            template: "<h2>Awesome tutorial</h2>\n                <h3>{{ title }}</h3>\n                <img [src]=imgLink>\n                <br><br>\n                <input type=\"text\" value=\"Angular\">\n                <h4>Header 4 tutorial component</h4>\n                <div [class.myClass]=\"applyclass\"></div>\n                <div [style.color]=\"applyblue?'blue':'red'\"></div>",
-            styles: ["\n        .myClass {\n            color: blue;\n        }\n        h4:{\n            color: red;\n        }\n    "]
-
+            template: "<h2>Awesome tutorial</h2>\n                <h3>{{ title }}</h3>\n                <label> Enter Child component value </label>\n                <input type=\"text\" #childText (keyup)=\"onChange(childText.value)\">\n                <p>Value from Parent component is </p>\n                {{parentData}}\n                ",
+            inputs: ["parentData"],
+            outputs: ["childEvent"]
         }), 
         __metadata('design:paramtypes', [])
     ], TutorialsComponent);

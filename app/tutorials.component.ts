@@ -1,27 +1,24 @@
 import { Component } from '@angular/core'
+import { EventEmitter } from '@angular/core'
 
 @Component({
     selector: 'my-tutorials',
     template: `<h2>Awesome tutorial</h2>
                 <h3>{{ title }}</h3>
-                <img [src]=imgLink>
-                <br><br>
-                <input type="text" value="Angular">
-                <h4>Header 4 tutorial component</h4>
-                <div [class.myClass]="applyclass"></div>
-                <div [style.color]="applyblue?'blue':'orange'"></div>`,
-    styles: [`
-        .myClass {
-            color: blue;
-        }
-        h4:{
-            color: red;
-        }
-    `]
+                <label> Enter Child component value </label>
+                <input type="text" #childText (keyup)="onChange(childText.value)">
+                <p>Value from Parent component is </p>
+                {{parentData}}
+                `,
+    inputs: [`parentData`],
+    outputs: [`childEvent`]
 })
 export class TutorialsComponent {
     public title: string = "Tutorials";
-    public imgLink: string = "http://lorempixel.com/400/200";
-    public applyclass: boolean = true;
-    public applyblue: boolean = true;
+    public parentData: string;
+    childEvent = new EventEmitter<string>();
+
+    onChange(value:string) {
+        this.childEvent.emit(value);
+    }
 }

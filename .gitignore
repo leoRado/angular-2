@@ -3,3 +3,8 @@ node_modules/
 typings/
 
 npm-debug.log
+
+*.js
+*.js.map
+
+!systemjs.config.js
