@@ -7,4 +7,4 @@ npm-debug.log
 *.js
 *.js.map
 
-!systemjs.config.js
+!*.config.js
